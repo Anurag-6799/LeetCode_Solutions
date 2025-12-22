@@ -21,5 +21,6 @@ class Solution:
                 longest = max(longest,current_streak)
         return longest
         
+        
 # @lc code=end
 
