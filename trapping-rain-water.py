@@ -13,24 +13,22 @@ class Solution:
 
         left_max =0
         right_max =0
-        water = 0
+        ans = 0
 
-        while left<=right:
+        while left<right:
             if height[left]<=height[right]:
-                if height[left]>left_max:
-                    left_max = height[left]
+                if left_max>height[left]:
+                    ans+=(left_max-height[left])
                 else:
-                    water += left_max-height[left]
+                    left_max = height[left]
                 left+=1
             else:
-                if height[right]>right_max:
-                    right_max = height[right]
+                if right_max>height[right]:
+                    ans+=(right_max-height[right])
                 else:
-                    water += right_max-height[right]
-                right -=1
-        return water
-                
-
+                    right_max = height[right]
+                right-=1
+        return ans
         
 # @lc code=end
 
